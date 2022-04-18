@@ -3,7 +3,7 @@
 echo "Enter the FULL path for the website: "
 read -r websitePath
 
-if [[ -d "$websitePath" ]]; then
+if [[ -d "$websitePath" && -z "$(ls -A $websitePath)" ]]; then
 
 	echo "Creating initial directories."
 	mkdir "$websitePath/public_html"
